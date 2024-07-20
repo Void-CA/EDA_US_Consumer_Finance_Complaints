@@ -1,32 +1,40 @@
-# Proyecto de Ciencia de Datos con Kaggle
+# Data Science Project with Kaggle
 
-## Descripción
-Este proyecto realiza un Análisis Exploratorio de Datos (EDA) en un dataset descargado de Kaggle. El objetivo es explorar y limpiar los datos, y presentar los hallazgos de manera clara y concisa.
+## Description
 
-## Tecnologías Utilizadas
+This project encompasses a comprehensive data analysis pipeline, starting from Exploratory Data Analysis (EDA) to the implementation of machine learning models for generating insights from the dataset downloaded from Kaggle. The goal is to explore, clean, and analyze the data thoroughly and develop predictive models to derive actionable insights.
+
+## Technologies Used
+
 - Python
 - Pandas
 - NumPy
 - Matplotlib
 - Seaborn
+- Scikit-learn
+- TensorFlow/Keras (if applicable)
 - Jupyter Notebook
 - Docker
 - Git
 
-## Estructura del Proyecto
-- `data/`: Contiene el dataset.
-- `notebooks/`: Contiene los notebooks de Jupyter con el EDA y análisis.
-- `scripts/`: Contiene los scripts de Python.
-- `reports/`: Contiene las visualizaciones y resultados generados.
-- `docs/`: Contiene la documentación del proyecto.
-- `README.md`: Descripción general del proyecto.
-- `requirements.txt`: Dependencias del proyecto.
-- `Dockerfile`: Definición de la imagen Docker.
-- `docker-compose.yml`: Orquestación de contenedores Docker.
+## Project Structure
 
-## Cómo Ejecutar
-1. Clonar el repositorio.
-2. Construir la imagen de Docker y ejecutar el contenedor:
+- `data/`: Contains the dataset.
+- `notebooks/`: Contains Jupyter notebooks for EDA, analysis, and modeling.
+- `scripts/`: Contains Python scripts for data processing, feature engineering, model training, and evaluation.
+- `reports/`: Contains visualizations, model results, and insights generated from the analysis.
+- `docs/`: Contains project documentation.
+- `tests/`: Contains unit tests and integration tests for verifying the functionality of scripts and models.
+- `README.md`: Overview of the project.
+- `requirements.txt`: Project dependencies.
+- `Dockerfile`: Definition of the Docker image.
+- `docker-compose.yml`: Docker container orchestration.
+
+## How to Run
+
+1. Clone the repository.
+2. Build the Docker image and run the container:
+
    ```bash
    docker-compose build
    docker-compose up

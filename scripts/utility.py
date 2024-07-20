@@ -46,3 +46,42 @@ def set_multiple_columns_datatype(df: DataFrame, columns: dict) -> DataFrame:
     for column, datatype in columns.items():
         df = set_column_datatype(df, column, datatype)
     return df
+
+
+def group_rare_categories(df, column, threshold=50):
+    """
+    Groups less frequent categories into a common category 'Others'.
+
+    :param df: DataFrame with the data.
+    :param column: Name of the categorical column.
+    :param threshold: Frequency threshold for considering a category as 'Others'.
+    :return: DataFrame with the updated column.
+    """
+    # Calculate the frequency of each category
+    value_counts = df[column].value_counts()
+
+    # Identify categories that appear less than the threshold
+    less_frequent = value_counts[value_counts < threshold].index
+
+    # Replace less frequent categories with 'Others'
+    df[column + '_simplified'] = df[column].replace(less_frequent, 'Others')
+
+    return df
+
+
+
+def extract_date_features(df, date_column):
+    """
+    Extracts temporal features from a date column.
+
+    :param df: DataFrame with the data.
+    :param date_column: Name of the date column.
+    :return: DataFrame with new temporal features.
+    """
+    df[date_column] = pd.to_datetime(df[date_column])
+    df['year_' + date_column] = df[date_column].dt.year
+    df['month_' + date_column] = df[date_column].dt.month
+
+    return df
+
+
